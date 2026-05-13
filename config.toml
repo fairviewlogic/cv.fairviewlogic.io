@@ -25,7 +25,7 @@ pagerSize = 20
 [params]
 author = "Mark Ryan"
 description = ""
-keywords = "developer,java,kubernetes,docker,gitlab"
+keywords = "platform engineer,software engineer,kubernetes,docker,github"
 info = [""]
 avatarURL = "images/me.jpg"
 dateFormat = "January 2, 2006"
