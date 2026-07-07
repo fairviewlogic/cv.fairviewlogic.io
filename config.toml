@@ -32,22 +32,28 @@ dateFormat = "January 2, 2006"
 colorScheme = "auto"
 hideColorSchemeToggle = false
 rtl = false
-customCSS = []
+customCSS = ["css/cv.css"]
 customSCSS = []
 customJS = []
 customRemoteJS = []
 
 [[params.social]]
-name = "Gitlab"
-icon = "fa-brands fa-gitlab fa-2x"
+name = "GitHub"
+icon = "fa-brands fa-github fa-2x"
 weight = 1
-url = "https://gitlab.com/mryan321/"
+url = "https://github.com/mryan321/"
 
 [[params.social]]
 name = "LinkedIn"
 icon = "fa-brands fa-linkedin fa-2x"
 weight = 2
 url = "https://www.linkedin.com/in/mark-ryan/"
+
+[[params.social]]
+name = "Email"
+icon = "fa-solid fa-envelope fa-2x"
+weight = 3
+url = "mailto:mark.ryan@fairviewlogic.io"
 
 [languages.en]
 label = "English"

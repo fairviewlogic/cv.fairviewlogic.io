@@ -1,0 +1,15 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+{{ define "content" }}
+<section class="container page cv-page">
+  <article>
+    <header class="cv-head">
+      <p class="cv-lede">Go / Java engineer &middot; Maidenhead, UK</p>
+      <nav class="cv-downloads" aria-label="Download CV">
+        <a href="/Mark-Ryan-CV.pdf" download>PDF</a>
+        <a href="/Mark-Ryan-CV.docx" download>DOCX</a>
+      </nav>
+    </header>
+    {{ .Content }}
+  </article>
+</section>
+{{ end }}

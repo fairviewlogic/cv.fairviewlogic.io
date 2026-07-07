@@ -1,0 +1,30 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+{{ define "content" }}
+<section class="container page reading-page">
+  <article>
+    <header class="reading-head">
+      <p class="reading-lede">Articles I've found interesting recently.</p>
+    </header>
+
+    {{ .Content }}
+
+    {{ with hugo.Data.reading }}
+    <ol class="reading-list">
+      {{ range . }}
+      {{ $host := "" }}
+      {{ with urls.Parse .url }}{{ $host = .Host }}{{ end }}
+      <li class="reading-item">
+        <div class="reading-row">
+          <a class="reading-title" href="{{ .url }}" rel="noopener">{{ .title }}</a>
+          <time class="reading-date" datetime="{{ .added }}">{{ dateFormat "2006-01-02" .added }}</time>
+        </div>
+        {{ with $host }}<div class="reading-host">{{ . }}</div>{{ end }}
+      </li>
+      {{ end }}
+    </ol>
+    {{ else }}
+    <p class="reading-empty">Nothing here yet.</p>
+    {{ end }}
+  </article>
+</section>
+{{ end }}
