@@ -1,24 +1,26 @@
 {{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
 {{ define "content" }}
-<section class="container page list-page reading-page">
+<section class="container page list-page listening-page">
   <article>
     <header class="list-head">
-      <p class="list-lede">Articles I've found interesting recently.</p>
+      <p class="list-lede">Music I've been playing recently.</p>
     </header>
 
     {{ .Content }}
 
-    {{ with hugo.Data.reading }}
+    {{ with hugo.Data.listening }}
     <ol class="list-entries">
       {{ range . }}
-      {{ $host := "" }}
-      {{ with urls.Parse .url }}{{ $host = .Host }}{{ end }}
       <li class="list-item">
         <div class="list-row">
+          {{ if .url }}
           <a class="list-title" href="{{ .url }}" rel="noopener">{{ .title }}</a>
-          <time class="list-date" datetime="{{ .added }}">{{ dateFormat "2006-01-02" .added }}</time>
+          {{ else }}
+          <span class="list-title">{{ .title }}</span>
+          {{ end }}
+          <time class="list-date" datetime="{{ .played }}">{{ dateFormat "2006-01-02" .played }}</time>
         </div>
-        {{ with $host }}<div class="list-sub">{{ . }}</div>{{ end }}
+        {{ with .subtitle }}<div class="list-sub">{{ . }}</div>{{ end }}
       </li>
       {{ end }}
     </ol>

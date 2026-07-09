@@ -152,57 +152,62 @@
 }
 
 /* ---------------------------------------------------------------------
-   Reading page — same aesthetic language as .cv-page, list of entries
-   fed by data/reading.yaml (managed by the reading-collector Lambda).
+   .list-page — shared list-of-dated-items layout used by both /reading/
+   and /listening/. Each page also gets a .{name}-page hook for any
+   future page-specific tweaks. The aesthetic language matches .cv-page.
+
+   Data owners:
+     /reading/  <- fairviewlogic/helpers reading-collector Lambda
+     /listening/ <- future helpers script (Spotify recent-played)
    --------------------------------------------------------------------- */
 
-.reading-page {
+.list-page {
   --cv-muted: color-mix(in srgb, currentColor 50%, transparent);
   --cv-faint: color-mix(in srgb, currentColor 10%, transparent);
   --cv-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
-.reading-page article {
+.list-page article {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", system-ui, sans-serif;
   line-height: 1.65;
 }
 
-.reading-page .reading-head {
+.list-page .list-head {
   margin: 0 0 3em;
   padding-bottom: 1.5em;
   border-bottom: 1px solid var(--cv-faint);
 }
 
-.reading-page .reading-lede {
+.list-page .list-lede {
   margin: 0;
   font-size: 1.05em;
   color: var(--cv-muted);
 }
 
 /* Intro paragraph from the markdown body */
-.reading-page article > p {
+.list-page article > p {
   margin: 0 0 2.5em;
   color: var(--cv-muted);
   font-size: 0.95em;
 }
 
-.reading-page .reading-list {
+.list-page .list-entries {
   list-style: none;
   padding: 0;
   margin: 0;
   counter-reset: none;
 }
 
-.reading-page .reading-item {
+.list-page .list-item {
   padding: 1.2em 0;
   border-bottom: 1px solid var(--cv-faint);
 }
 
-.reading-page .reading-item:last-child {
+.list-page .list-item:last-child {
   border-bottom: none;
 }
 
-.reading-page .reading-row {
+.list-page .list-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -210,7 +215,7 @@
   flex-wrap: wrap;
 }
 
-.reading-page .reading-title {
+.list-page .list-title {
   font-size: 1em;
   font-weight: 500;
   color: inherit;
@@ -219,11 +224,16 @@
   transition: border-color 0.15s ease;
 }
 
-.reading-page .reading-title:hover {
+.list-page .list-title:hover {
   border-bottom-color: currentColor;
 }
 
-.reading-page .reading-date {
+/* Non-link titles (when entry has no url) render without an underline */
+.list-page span.list-title {
+  border-bottom: none;
+}
+
+.list-page .list-date {
   font-family: var(--cv-mono);
   color: var(--cv-muted);
   font-size: 0.78em;
@@ -231,7 +241,7 @@
   letter-spacing: 0.02em;
 }
 
-.reading-page .reading-host {
+.list-page .list-sub {
   font-family: var(--cv-mono);
   color: var(--cv-muted);
   font-size: 0.78em;
@@ -239,13 +249,13 @@
   letter-spacing: 0.01em;
 }
 
-.reading-page .reading-empty {
+.list-page .list-empty {
   color: var(--cv-muted);
   font-style: italic;
 }
 
-.reading-page h2 .heading-link,
-.reading-page h3 .heading-link {
+.list-page h2 .heading-link,
+.list-page h3 .heading-link {
   display: none;
 }
 
