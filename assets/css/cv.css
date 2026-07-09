@@ -248,3 +248,13 @@
 .reading-page h3 .heading-link {
   display: none;
 }
+
+/* ---------------------------------------------------------------------
+   Footer — deliberately subtle. Tiny, faded, no attribution.
+   --------------------------------------------------------------------- */
+.cv-footer {
+  font-size: 0.7em;
+  color: color-mix(in srgb, currentColor 35%, transparent);
+  letter-spacing: 0.05em;
+  padding: 3em 0 1.5em;
+}
