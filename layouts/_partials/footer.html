@@ -1,11 +1,14 @@
 {{/*
   Overrides theme's layouts/_partials/footer.html.
-  Strips the "Powered by Hugo & Coder" attribution and reduces
-  the copyright to the bare year — small + muted via .cv-footer
-  CSS in assets/css/cv.css.
+  Keeps the copyright + Hugo/Coder attribution (courtesy to the theme
+  author and framework) but styles them small and muted via .cv-footer
+  in assets/css/cv.css so they don't compete for attention.
 */}}
 <footer class="footer cv-footer">
   <section class="container">
     &copy;&nbsp;{{ now.Year }}
+    &middot;
+    Powered by <a href="https://gohugo.io/" rel="noopener">Hugo</a>
+    &amp; <a href="https://github.com/luizdepra/hugo-coder/" rel="noopener">Coder</a>
   </section>
 </footer>

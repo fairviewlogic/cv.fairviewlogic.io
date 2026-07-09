@@ -260,11 +260,23 @@
 }
 
 /* ---------------------------------------------------------------------
-   Footer — deliberately subtle. Tiny, faded, no attribution.
+   Footer — deliberately subtle. Small, faded, but keeps Hugo + Coder
+   attribution. Links inherit the muted colour so nothing shouts.
    --------------------------------------------------------------------- */
 .cv-footer {
   font-size: 0.7em;
   color: color-mix(in srgb, currentColor 35%, transparent);
   letter-spacing: 0.05em;
   padding: 3em 0 1.5em;
+}
+
+.cv-footer a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  transition: border-color 0.15s ease;
+}
+
+.cv-footer a:hover {
+  border-bottom-color: currentColor;
 }
