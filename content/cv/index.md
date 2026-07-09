@@ -1,6 +1,6 @@
 ---
 title: "CV"
-description: "Mark Ryan — Go / Java engineer based in Maidenhead, UK."
+description: "Mark Ryan — Go Engineer based in Maidenhead, UK."
 date: 2026-05-13
 ---
 
@@ -92,8 +92,7 @@ date: 2026-05-13
 
 When I'm not writing code:
 
-- **Golf** — playing more than I'm good at; happiest on a quiet course at dawn.
-- **Squash** — short, sharp, fast — the antidote to a long day at the screen.
-- **Football** — supporting from the sidelines and the sofa.
-- **Film & TV** — a steady diet of thrillers, sci-fi, and the occasional prestige drama.
-- **Fiction** — see also [reading](/reading/) — currently somewhere between literary and crime.
+- Golf
+- Football
+- Film & TV
+- Fiction
